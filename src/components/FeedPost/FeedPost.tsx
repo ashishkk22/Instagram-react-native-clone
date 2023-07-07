@@ -14,9 +14,10 @@ import VideoPlayer from '../VideoPlayer';
 
 interface IFeedPost {
   post: IPost;
+  isVisible: boolean;
 }
 
-const FeedPost = ({post}: IFeedPost) => {
+const FeedPost = ({post, isVisible}: IFeedPost) => {
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 
   const [isLiked, setIsLiked] = useState(false);
@@ -44,7 +45,11 @@ const FeedPost = ({post}: IFeedPost) => {
   } else if (post.images) {
     content = <Carousel images={post.images} onDoublePress={toggleLike} />;
   } else if (post.video) {
-    content = <VideoPlayer uri={post.video} />;
+    content = (
+      <DoublePressable onDoublePress={toggleLike}>
+        <VideoPlayer uri={post.video} paused={!isVisible} />
+      </DoublePressable>
+    );
   }
 
   return (

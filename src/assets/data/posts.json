@@ -2,7 +2,7 @@
   {
     "id": "video1",
     "createdAt": "22 January 2024",
-    "video": "hi",
+    "video": "https://static.pexels.com/lib/videos/free-videos.mp4",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellendus unde blanditiis. Eos fugiat dolorem ea fugit aut sapiente corrupti autem dolores deleniti architecto, omnis, amet unde dignissimos quam minima?",
     "user": {
       "id": "u1",
